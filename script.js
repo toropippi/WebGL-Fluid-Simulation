@@ -606,9 +606,8 @@ const displayShaderSource = `
         bloom = linearToGamma(bloom);
         c += bloom;
     #endif
-        c=0;
         float a = max(c.r, max(c.g, c.b));
-        gl_FragColor = vec4(c, a);
+        gl_FragColor = vec4(c, a)*0.3;
     }
 `;
 
