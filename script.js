@@ -601,13 +601,12 @@ const displayShaderSource = `
     #ifdef BLOOM
         float noise = texture2D(uDithering, vUv * ditherScale).r;
         noise = noise * 2.0 - 1.0;
-        bloom += noise / 255.0 *100.0;
-        bloom += 1.0;
+        bloom += noise / 255.0 * 300.0;
         bloom = linearToGamma(bloom);
         c += bloom;
     #endif
         float a = max(c.r, max(c.g, c.b));
-        gl_FragColor = vec4(c, a)*0.3;
+        gl_FragColor = vec4(c, a);
     }
 `;
 
